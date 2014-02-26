@@ -21,6 +21,10 @@ input[type="button"].selected {
 	cursor: default;
 }
 
+input, select {
+	margin-top: 10px;
+}
+
 /* Headers */
 h1, h2, h3, h4, h5, h6 {
 	margin: 5px;
@@ -47,26 +51,15 @@ table td, th {
 
 table thead th {
 	text-align: left;
+	color: white;
 }
 
-table#tableAlt1 thead tr {
-	background-color: #FFF038;
-}
-
-table#tableAlt1 tbody tr {
-	background-color: #DD5F95;
-}
-
-table#tableAlt1 tbody tr.even {
+table thead tr {
 	background-color: #1786BC;
 }
 
-table#tableAlt2 thead tr {
-	background-color: #CCCCCC;
-}
-
-table#tableAlt2 tbody tr.even {
-	background-color: #EEEEEE;
+table tbody tr.even {
+	background-color: #95B9E8 ;
 }
 
 /* Outer wrap */
@@ -77,23 +70,23 @@ table#tableAlt2 tbody tr.even {
 	padding: 20px;
 }
 
-/* Site header */
-header {
-	height: 200px;
-}
+	/* Site header */
+	header {
+		height: 200px;
+	}
 
-#sessionInfo {
-	float: right;
-}
+		#sessionInfo {
+			float: right;
+		}
 
-#navigation {
-	margin-top: 15px;
-}
+		#navigation {
+			margin-top: 10px;
+		}
 
-/* Content */
-#content {
-	padding: 10px;
-	min-height: 400px;
-	border: 1px solid black;
-	border-radius: 10px;
-}
+	/* Content */
+	#content {
+		padding: 10px;
+		min-height: 400px;
+		border: 1px solid black;
+		border-radius: 10px;
+	}
