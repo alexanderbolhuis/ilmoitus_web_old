@@ -1,43 +1,11 @@
-<div>
+<div id="wrap">
 	<header>
 		<img src="images/logo.jpg"/>
 		<div id="sessionInfo">Ingelogd als {{userName}} ({{userId}}) <input type="button" value="uitloggen" ng-click="logoutBtnClick()" /></div>
 		<div id="navigation">
-			<input type="button" value="Mijn declaraties" class="selected" ng-click="navDeclarationsBtnClick()" />
-			<input type="button" value="Nieuwe declaratie indienen" ng-click="navNewDeclarationBtnClick()"/>
+			<input type="button" value="Mijn declaraties" ng-click="navBtnClick('template.declarations', $event)" />
+			<input type="button" value="Nieuwe declaratie indienen" ng-click="navBtnClick('template.newDeclaration', $event)"/>
 		</div>
 	</header>
-	<div id="content">
-		<h2>h1 t/m 3</h2><br/>
-		<h5>h4 t/m 6</h5><br/>
-		<table>
-			<thead>
-				<tr><th>datum</th><th>Declaratiesoort</th><th>Onderdeel declaratiesoort</th></tr>
-			</thead>
-			<tbody>
-				<tr><td>01-12-2012</td><td>Reiskosten</td><td>Zakelijke reiskosten (OV - trein / bus / metro / taxi)</td></tr>
-				<tr class="even"><td>01-12-2012</td><td>Reiskosten</td><td>Zakelijke reiskosten (OV - trein / bus / metro / taxi)</td></tr>
-				<tr><td>01-12-2012</td><td>Reiskosten</td><td>Zakelijke reiskosten (OV - trein / bus / metro / taxi)</td></tr>
-				<tr class="even"><td>01-12-2012</td><td>Reiskosten</td><td>Zakelijke reiskosten (OV - trein / bus / metro / taxi)</td></tr>
-			</tbody>
-		</table>
-
-		<br/>
-		<input type="text" value="test"/><br/>
-		<input type="password" value="testttt"/><br/>
-		<input type="date"/><br/>
-		<select>
-			<option>Test1</option>
-			<option>Test2</option>
-			<option>Test3</option>
-		</select><br/>
-		<select size="4">
-			<option>Bijlage1.jpg</option>
-			<option>Bijlage2+3.pdf</option>
-			<option>Bijlage4.jpg</option>
-			<option>Bijlage5.jpg</option>
-			<option>Bijlage6.jpg</option>
-			<option>Bijlage7.jpg</option>
-		</select><br/>
-	</div>
+	<div id="content" ui-view></div>
 </div>

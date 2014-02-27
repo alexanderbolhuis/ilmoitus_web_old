@@ -1,1 +1,1 @@
-var ilmoitusApp = angular.module('ilmoitusApp', ['ngRoute']); 
+var ilmoitusApp = angular.module('ilmoitusApp', ['ui.router']);

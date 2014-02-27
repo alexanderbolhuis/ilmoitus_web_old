@@ -1,38 +1,51 @@
-ilmoitusApp.controller('loginController', ['$scope',
-function($scope, $routeParams) {
+ilmoitusApp.controller('loginController', function($scope, $state) {
+	//Login button. Check for correct credentials.
+	$scope.loginBtnClick = function() {
+		$state.go('template.declarations');
+	}
+});
 
-}]);
-
-ilmoitusApp.controller('templateController', ['$scope',
-function($scope, $routeParams) {
-	//PLACEHOLDERS login info
+ilmoitusApp.controller('templateController', function($scope, $state) {
+	//PLACEHOLDERS login info. This info should be retrieved from models (factories).
 	$scope.userName = "Piet Maas";
 	$scope.userId = "9120103";
 
 	// Button listeners
 	$scope.logoutBtnClick = function(){ 
-		window.location = "#/login";
+		$state.go('login');
 	}
-	$scope.navDeclarationsBtnClick = function(){ 
-		window.location = "#/";
+
+	$scope.navBtnClick = function(targetState, sender) {
+		var btn = angular.element(sender.srcElement);
+		//alert(btn.val());
+		$state.go(targetState);
 	}
-	$scope.navNewDeclarationBtnClick = function(){ 
-		window.location = "#/newDeclaration";
+
+	$scope.hi = function (sender) {
+       var btn = angular.element(sender.srcElement);
+       alert(btn.val());
+    }
+
+	/*$scope.navDeclarationsBtnClick = function(){
+		$state.go('template.declarations');
 	}
-}]);
+	$scope.navNewDeclarationBtnClick = function(){
+		$state.go('template.newDeclaration');
+	}*/
+});
 
-ilmoitusApp.controller('declarationsController', ['$scope',
-function($scope, $routeParams) {
+ilmoitusApp.controller('declarationsController', function($scope, $state) {
+	//Metod to open the declaration Details page
+	$scope.openDeclarationDetails = function(declarationId){
+		$state.go('template.declarationDetails', {declarationId: declarationId});
+	}
+});
 
-}]);
+ilmoitusApp.controller('newDeclarationController', function($scope) {
+	
+});
 
-ilmoitusApp.controller('newDeclarationController', ['$scope',
-function($scope, $routeParams) {
-
-}]);
-
-ilmoitusApp.controller('declarationDetailsController', ['$scope', '$routeParams',
-function($scope, $routeParams) {
+ilmoitusApp.controller('declarationDetailsController', function($scope, $stateParams) {
 	// Get declaration ID from url parameter.
-	$scope.declarationId = $routeParams.declarationId;
-}]);
+	$scope.declarationId = $stateParams.declarationId;
+});

@@ -1,4 +1,12 @@
 //Everything that should be done when the website finishes loading
-$(document).ready(function(){
+function addTableRow(tableId) {
 
-});
+}
+
+function showMessage() {
+
+}
+
+function hideMessage() {
+	
+}
