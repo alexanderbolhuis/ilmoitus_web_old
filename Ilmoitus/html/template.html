@@ -3,8 +3,8 @@
 		<img src="images/logo.jpg"/>
 		<div id="sessionInfo">Ingelogd als {{userName}} ({{userId}}) <input type="button" value="uitloggen" ng-click="logoutBtnClick()" /></div>
 		<div id="navigation">
-			<input type="button" value="Mijn declaraties" ng-click="navBtnClick('template.declarations', $event)" />
-			<input type="button" value="Nieuwe declaratie indienen" ng-click="navBtnClick('template.newDeclaration', $event)"/>
+			<input id="declarationsBtn" type="button" value="Mijn declaraties" ng-click="navBtnClick('template.declarations')" />
+			<input id="newDeclarationBtn" type="button" value="Nieuwe declaratie indienen" ng-click="navBtnClick('template.newDeclaration')"/>
 		</div>
 	</header>
 	<div id="content" ui-view></div>

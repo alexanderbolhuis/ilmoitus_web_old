@@ -10,31 +10,26 @@ ilmoitusApp.controller('templateController', function($scope, $state) {
 	$scope.userName = "Piet Maas";
 	$scope.userId = "9120103";
 
+	$scope.selectedNavBtn;
+
 	// Button listeners
 	$scope.logoutBtnClick = function(){ 
 		$state.go('login');
 	}
 
-	$scope.navBtnClick = function(targetState, sender) {
-		var btn = angular.element(sender.srcElement);
-		//alert(btn.val());
+	$scope.navBtnClick = function(targetState) {
 		$state.go(targetState);
 	}
 
-	$scope.hi = function (sender) {
-       var btn = angular.element(sender.srcElement);
-       alert(btn.val());
+	$scope.navBtnSelect = function (navBtnId) {
+		if($scope.selectedNavBtn) {$scope.selectedNavBtn.removeClass("selected");}
+		$("#"+navBtnId).addClass("selected");
+		$scope.selectedNavBtn = $("#"+navBtnId);
     }
-
-	/*$scope.navDeclarationsBtnClick = function(){
-		$state.go('template.declarations');
-	}
-	$scope.navNewDeclarationBtnClick = function(){
-		$state.go('template.newDeclaration');
-	}*/
 });
 
 ilmoitusApp.controller('declarationsController', function($scope, $state) {
+	$scope.navBtnSelect("declarationsBtn");
 	//Metod to open the declaration Details page
 	$scope.openDeclarationDetails = function(declarationId){
 		$state.go('template.declarationDetails', {declarationId: declarationId});
@@ -42,7 +37,7 @@ ilmoitusApp.controller('declarationsController', function($scope, $state) {
 });
 
 ilmoitusApp.controller('newDeclarationController', function($scope) {
-	
+	$scope.navBtnSelect("newDeclarationBtn");
 });
 
 ilmoitusApp.controller('declarationDetailsController', function($scope, $stateParams) {
