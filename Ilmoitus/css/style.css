@@ -147,38 +147,32 @@ table tbody tr.even {
 	}
 	
 /* Login Page */
-#content-login-logo {
-	padding: 10px;
-	position: fixed;
-	top: 21%;
-	left: 50%;
+#loginWrap {
+	margin: auto;
+	margin-top: 100px;
 	width: 400px;
-	height: 218px;
-	margin-top: -109px;
-	margin-left: -200px;
 }
 
-#content-login {
-	padding: 10px;
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	border: 1px solid black;
-	border-radius: 10px;
-	width: 400px;
-	height: 250px;
-	margin-top: -150px;
-	margin-left: -200px;
-}
+	#loginWrap #content-login-logo {
+		width: 250px;
+		margin: auto;
+	}
+
+	#content-login {
+		padding: 10px;
+		border: 1px solid black;
+		border-radius: 10px;
+		width: 100%;
+		height: 250px;
+	}
 
 	.center {
 		font-size: 50px;
 		text-align: center;
 	}
 
-	form {
-		width: 390px;
-		margin: 0 auto;
+	#loginForm {
+		width: 100%;
 	}
 	
 	#login-input {
@@ -190,8 +184,6 @@ table tbody tr.even {
 	margin-top:3px;
 	font-size:0.9em;
 	color:#3a3a3a;
-	-moz-border-radius:5px;
-    -webkit-border-radius:5px;
     border-radius:5px;
 	}
 
