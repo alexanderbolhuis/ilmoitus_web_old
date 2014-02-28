@@ -1,5 +1,6 @@
 div { 
 	/* Voorkomt breder worden van divs wanneer padding gegeven word. Width property is nu dus te vertrouwen. :) */
+	-moz-box-sizing: border-box;
 	box-sizing: border-box; 
 }
 
