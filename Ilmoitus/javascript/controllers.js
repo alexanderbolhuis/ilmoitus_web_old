@@ -44,3 +44,8 @@ ilmoitusApp.controller('declarationDetailsController', function($scope, $statePa
 	// Get declaration ID from url parameter.
 	$scope.declarationId = $stateParams.declarationId;
 });
+
+//Remove
+ilmoitusApp.controller('testPageController', function($scope) {
+	$scope.navBtnSelect("testPageBtn");
+});
