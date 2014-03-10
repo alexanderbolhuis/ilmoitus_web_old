@@ -215,7 +215,7 @@ table tbody tr.even {
 .DeclarationFloatDiv textarea{width:100%; height:104px;  }
 .DeclarationFloatDiv select{ width:100%;margin-top:1px; }
 .DeclarationFloatDiv input{ width:172px; }
-.DeclarationFloatDivRight{ margin-right:40px; height:160px; width:140px; text-align:right; float:right;  padding-top:50px; }
+.DeclarationFloatDivRight{ margin-right:40px; height:160px; width:140px; text-align:right; float:right;  padding-top:112px; }
 .DeclarationFloatDivRight input{ width:130px; height:30px; }
 .DeclarationPriceinput { width:60px; }
 .DeclarationDelete { width:28px; }

@@ -1,4 +1,46 @@
 <div>
-	declarations page!<br/>
-	<input type="button" value="open declarationDetails" ng-click="openDeclarationDetails(5)"/>
+	<h2>Ingediende declaraties:</h2>
+	<div align="right">
+		<input type="button" value="Declaratie annuleren" />
+		<input type="button" value="Declaratie tonen" ng-click="openDeclarationDetails(5)" />
+	</div>
+	</br>
+	<table id="testTable">
+		<thead>
+			<th>Ingediend op</th>
+			<th>Aantal declaratie items</th>
+			<th>Declaratie bedrag</th>
+			<th>Status</th>
+			<th>Info (reden van afkeuring of uitkeringsdatum)</th>
+		</thead>
+		<tbody>
+			<tr>
+				<td>26-12-2012</td>
+				<td>4</td>
+				<td>&euro; 180,-</td>
+				<td>In behandeling</td>
+			</tr>
+			<tr>
+				<td>23-12-2012</td>
+				<td>5</td>
+				<td>&euro; 190,-</td>
+				<td>Afgekeurd</td>
+				<td>Er mist een bewijsstuk voor het etentje</td>
+			</tr>
+			<tr>
+				<td>15-11-2012</td>
+				<td>4</td>
+				<td>&euro; 54,-</td>
+				<td>Goedgekeurd</td>
+				<td>Komt op loonstrook voor: 31-11-2012</td>
+			</tr>
+			<tr>
+				<td>03-11-2012</td>
+				<td>3</td>
+				<td>&euro; 49,99</td>
+				<td>Goedgekeurd</td>
+				<td>Komt op loonstrook voor: 31-11-2012</td>
+			</tr>
+		</tbody>
+	</table>
 </div>

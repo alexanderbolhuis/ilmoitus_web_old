@@ -3,13 +3,12 @@
     <select>
         <option value="100000">Jakob de Rotte</option>
     </select><br/>
-	<span class="Headerspan">Personeelsnr:</span> {{declarationId}}<br/>
+	<span class="Headerspan">Personeelsnr:</span> 9303835<br/>
     
-    <br/><br/>
+    <br/>
     
     <span class="TotalDeclarationPrice">
     	Totaal declaratiebedrag: &euro; 150,-
-    	&nbsp;&nbsp;&nbsp;<input type="button" value="Item toevoegen" />
     </span>
     
     <h3>Declaratie items:</h3>
@@ -17,36 +16,32 @@
 		<thead>
 			<tr>
             	<th style="width:100px;">Datum</th>
-                <th style="width:160px;">Declaratiesoort</th>
-                <th style="width:260px;">Onderdeel declaratiesoort</th>
+                <th style="width:250px;">Declaratiesoort</th>
+                <th style="width:400px;">Onderdeel declaratiesoort</th>
                 <th style="width:80px;">Bedrag</th>
                 <th style="width:120px;">Opmerking</th>
-                <th style="width:30px;"></th>
             </tr>
 		</thead>
 		<tbody>
 			<tr>
-            	<td><input name="declarationdate" type="date" /></td>
-                <td>
-                	<select>
-                    	<option>Buitenland</option>
-                    </select>
-                </td>
-                <td>
-                	<select>
-                    	<option>Reiskosten</option>
-                    </select>
-                </td>
-                <td>&euro; <input class="DeclarationPriceinput" name="declarationprice" type="text" /></td>
-                <td><input name="declarationcomment" type="text" /></td>
-                <td><input class="DeclarationDelete" name="declarationcomment" type="button" value="X" /></td>
-            </tr>
-			<!--<tr class="even"><td><input type="text"></td><td><select><option>one</option><option>two</option></select></td></tr>-->
+				<td>01-12-2012</td>
+				<td>Reiskosten</td>
+				<td>Zakelijke reiskosten (OV - trein / bus / metro / taxi)</td>
+				<td>&euro; 20,-</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>01-12-2012</td>
+				<td>Reiskosten</td>
+				<td>Parkeer- / Tol- / Veergeld (Auto van de zaak / lease-auto)</td>
+				<td>&euro; 15,-</td>
+				<td>Geen vrije plaatsen meer op de school. Moest parkeer garage nemen</td>
+			</tr>
 		</tbody>
 	</table>
     
     
-    <br/><br/><br/>
+    <br/>
     
     <div class="DeclarationFloatContainer">
         <div class="DeclarationFloatDiv">
@@ -65,13 +60,6 @@
                 <option>text6</option>
                 <option>text7</option>
             </select><br/>
-            <input type="button" value="Verwijder bewijsstuk" />
-            <input type="button" value="Nieuw bewijsstuk" />
-        </div>
-        
-        <div class="DeclarationFloatDivRight">
-        	<input type="button" value="Annuleren" /><br/>
-            <input type="button" value="Verzenden" />
         </div>
     </div>
 </div>
