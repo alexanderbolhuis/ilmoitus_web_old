@@ -44,31 +44,35 @@ h1, h2, h3 {
 }
 
 /* Table */
-table {
+table.styledTable {
 	border: 2px solid black;
 }
 
-table td, th {
+table.styledTable td, th {
 	border-left: 2px solid black;
 	border-right: 2px solid black;
 	padding: 5px;
 }
 
-table td select {
+table.styledTable td input, table.styledTable td select {
 	width:100%;
 }
 
-table thead th {
+table.styledTable thead th {
 	text-align: left;
 	color: white;
 }
 
-table thead tr {
+table.styledTable thead tr {
 	background-color: #1786BC;
 }
 
-table tbody tr.even {
+table.styledTable tbody tr.even {
 	background-color: #95B9E8 ;
+}
+
+table input, table select {
+	margin-top: 0px;
 }
 
 /* Outer wrap */
