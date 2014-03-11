@@ -1,111 +1,110 @@
-div { 
-	/* Voorkomt breder worden van divs wanneer padding gegeven word. Width property is nu dus te vertrouwen. :) */
-	-moz-box-sizing: border-box;
-	box-sizing: border-box; 
+div {
+    /* Voorkomt breder worden van divs wanneer padding gegeven word. Width property is nu dus te vertrouwen. :) */
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 /* Buttons */
 input[type="button"] {
-	border-radius: 5px;
-	background-color: #cc0066;
-	border-color: #cc0066;
-	color: #FFFFFF;
-	outline: none;
+    border-radius: 5px;
+    background-color: #cc0066;
+    border-color: #cc0066;
+    color: #FFFFFF;
+    outline: none;
 }
+
 input[type="button"]:hover {
-	background-color: #000066;
-	border-color: #000066;
+    background-color: #000066;
+    border-color: #000066;
 }
+
 input[type="button"].selected {
-	background-color: #000066;
-	border-color: #000066;
-	cursor: default;
+    background-color: #000066;
+    border-color: #000066;
+    cursor: default;
 }
 
 input, select {
-	margin-top: 10px;
+    margin-top: 10px;
 }
 
 textarea {
-	resize: none;
+    resize: none;
 }
 
 /* Headers */
 h1, h2, h3, h4, h5, h6 {
-	margin: 5px;
+    margin: 5px;
 }
 
 h4, h5, h6 {
-	color: #CC0066
+    color: #CC0066
 }
 
 h1, h2, h3 {
-	color: #000066;
+    color: #000066;
 }
 
 /* Table */
 table.styledTable {
-	border: 2px solid black;
+    border: 2px solid black;
+    width: 100%;
 }
 
 table.styledTable td, th {
-	border-left: 2px solid black;
-	border-right: 2px solid black;
-	padding: 5px;
-}
-
-table.styledTable td input, table.styledTable td select {
-	width:100%;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    padding: 5px;
 }
 
 table.styledTable thead th {
-	text-align: left;
-	color: white;
+    text-align: left;
+    color: white;
 }
 
 table.styledTable thead tr {
-	background-color: #1786BC;
+    background-color: #1786BC;
 }
 
 table.styledTable tbody tr.even {
-	background-color: #95B9E8 ;
+    background-color: #95B9E8;
 }
 
 table input, table select {
-	margin-top: 0px;
+    margin-top: 0px;
 }
 
 /* Outer wrap */
 #wrap {
-	margin: auto;
-	width: 1024px;
-	/*border: 1px solid black;*/
-	padding: 20px;
+    margin: auto;
+    width: 1024px;
+    /*border: 1px solid black;*/
+    padding: 20px;
 }
 
-	/* Site header */
-	header {
-		height: 200px;
-	}
+/* Site header */
+header {
+    height: 200px;
+}
 
-		#sessionInfo {
-			float: right;
-		}
+#sessionInfo {
+    float: right;
+}
 
-		#navigation {
-			margin-top: 10px;
-		}
+#navigation {
+    margin-top: 10px;
+}
 
-	/* Content */
-	#content {
-		padding: 10px;
-		min-height: 400px;
-		border: 1px solid black;
-		border-radius: 10px;
-	}
+/* Content */
+#content {
+    padding: 10px;
+    min-height: 400px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
 
 /* Message popup */
-.coverBg{
+.coverBg {
     display: none;
     position: fixed;
     top: 0;
@@ -113,117 +112,173 @@ table input, table select {
     z-index: 500;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
-.cover{
-	border-radius: 10px;
-	display: none;
+.cover {
+    border-radius: 10px;
+    display: none;
     position: fixed;
     top: 300px;
     left: 50%;
-	margin-left: -270px;
+    margin-left: -270px;
     z-index: 600;
     width: 540px;
     height: auto;
     background-color: #ffffff;
 }
 
- 	.cover .header{
-	    width: 100%;
-	    background-color: #1786BC;
-	    border-bottom: 3px solid #cc0066;
-	    color: #ffffff;
-	    line-height: 40px;
-	    height: 40px;
-	    padding-left: 10px;
-	    font-weight: bold;
-	}
-
-	 	.cover .header .closeButton{
-		    float: right;
-		    height: 100%;
-		    width: 30px;
-		    color: #FFFFFF;
-		    font-size: 24px;
-		    cursor: pointer;
-		}
-
-	 	.cover .header .closeButton:hover{
-		    color: #000000;
-		}
-
-	 .cover .contentMessage{
-	    padding:20px;
-	    width: 100%;
-	}
-	
-/* Login Page */
-#loginWrap {
-	margin: auto;
-	margin-top: 100px;
-	width: 400px;
+.cover .header {
+    width: 100%;
+    background-color: #1786BC;
+    border-bottom: 3px solid #cc0066;
+    color: #ffffff;
+    line-height: 40px;
+    height: 40px;
+    padding-left: 10px;
+    font-weight: bold;
 }
 
-	#loginWrap #content-login-logo {
-		width: 250px;
-		margin: auto;
-	}
+.cover .header .closeButton {
+    float: right;
+    height: 100%;
+    width: 30px;
+    color: #FFFFFF;
+    font-size: 24px;
+    cursor: pointer;
+}
 
-	#content-login {
-		padding: 10px;
-		border: 1px solid black;
-		border-radius: 10px;
-		width: 100%;
-		height: 250px;
-	}
+.cover .header .closeButton:hover {
+    color: #000000;
+}
 
-	.center {
-		font-size: 50px;
-		text-align: center;
-	}
+.cover .contentMessage {
+    padding: 20px;
+    width: 100%;
+}
 
-	#loginForm {
-		width: 100%;
-	}
-	
-	#login-input {
-	width: 94%;
-	height: 27px;
-	background:#efefef;
-	border:1px solid #dedede;
-	padding: 10px;
-	margin-top:3px;
-	font-size:0.9em;
-	color:#3a3a3a;
-    border-radius:5px;
-	}
+/* Login Page */
+#loginWrap {
+    margin: auto;
+    margin-top: 100px;
+    width: 400px;
+}
 
-	#login-input:focus {
-		border:1px solid #97d6eb;
-	}
+#loginWrap #content-login-logo {
+    width: 250px;
+    margin: auto;
+}
 
-	#login-button {
-		width: 100%;
-		height:38px;
-		border:none;
-		margin-top:20px;
-		cursor:pointer;
-		font-size: 20px;
-	}
+#content-login {
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 100%;
+    height: 250px;
+}
 
-	#login-button:hover {
-			opacity:0.9;
-	}
+.center {
+    font-size: 50px;
+    text-align: center;
+}
 
-.Headerspan{ display:inline-block; width:130px; margin-bottom:10px; }
-.TotalDeclarationPrice{ float:right; margin-right:10px; margin-top:0px; margin-bottom:5px; font-size:14px; font-weight:bold; }
-.DeclarationFloatContainer{ overflow: auto; width:100%; }
-.DeclarationFloatDiv{ float:left; width:350px; margin-right:40px; height:160px; }
-.DeclarationFloatDiv textarea{width:100%; height:104px;  }
-.DeclarationFloatDiv select{ width:100%;margin-top:1px; }
-.DeclarationFloatDiv input{ width:172px; }
-.DeclarationFloatDivRight{ margin-right:40px; height:160px; width:140px; text-align:right; float:right;  padding-top:112px; }
-.DeclarationFloatDivRight input{ width:130px; height:30px; }
-.DeclarationPriceinput { width:60px; }
-.DeclarationDelete { width:28px; }
+#loginForm {
+    width: 100%;
+}
+
+#login-input {
+    width: 94%;
+    height: 27px;
+    background: #efefef;
+    border: 1px solid #dedede;
+    padding: 10px;
+    margin-top: 3px;
+    font-size: 0.9em;
+    color: #3a3a3a;
+    border-radius: 5px;
+}
+
+#login-input:focus {
+    border: 1px solid #97d6eb;
+}
+
+#login-button {
+    width: 100%;
+    height: 38px;
+    border: none;
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+#login-button:hover {
+    opacity: 0.9;
+}
+
+.Headerspan {
+    display: inline-block;
+    width: 130px;
+    margin-bottom: 10px;
+}
+
+.TotalDeclarationPrice {
+    float: right;
+    margin-right: 10px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.DeclarationFloatContainer {
+    overflow: auto;
+    width: 100%;
+}
+
+.DeclarationFloatDiv {
+    float: left;
+    width: 350px;
+    margin-right: 40px;
+    height: 160px;
+}
+
+.DeclarationFloatDetailsDiv select {
+    width: 100%;
+    height: 118px;
+    margin-top: 1px;
+}
+
+.DeclarationFloatDiv textarea {
+    width: 100%;
+    height: 114px;
+}
+
+.DeclarationFloatDiv select {
+    width: 100%;
+    margin-top: 1px;
+}
+
+.DeclarationFloatDiv input {
+    width: 172px;
+}
+
+.DeclarationFloatDivRight {
+    height: 160px;
+    width: 140px;
+    text-align: right;
+    float: right;
+    padding-top: 112px;
+}
+
+.DeclarationFloatDivRight input {
+    width: 130px;
+    height: 30px;
+}
+
+.DeclarationPriceinput {
+    width: 60px;
+}
+
+.DeclarationDelete {
+    width: 28px;
+}
