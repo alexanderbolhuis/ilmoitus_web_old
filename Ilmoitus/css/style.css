@@ -159,6 +159,7 @@ header {
 
 /* Login Page */
 #loginWrap {
+<<<<<<< HEAD
     margin: auto;
     margin-top: 100px;
     width: 400px;
@@ -276,7 +277,7 @@ header {
 }
 
 .DeclarationPriceinput {
-    width: 60px;
+    width: 60px !important;
 }
 
 .DeclarationDelete {

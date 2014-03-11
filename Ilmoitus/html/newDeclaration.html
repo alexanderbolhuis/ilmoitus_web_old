@@ -12,7 +12,7 @@
     </span>
     
     <h3>Declaratie items:</h3>
-    <table class="styledTable">
+    <table id="DeclarationTable" class="styledTable">
 		<thead>
 			<tr>
             	<th>Datum</th>
@@ -25,7 +25,7 @@
 		</thead>
 		<tbody>
 			<tr>
-            	<td><input name="declarationdate" type="date" /></td>
+            	<td><input name="declarationdate" type="date" onchange="if($(this).closest('tr').is(':last-child')){ addTableRow('DeclarationTable'); }" /></td>
                 <td>
                 	<select>
                     	<option>Buitenland</option>
@@ -38,9 +38,8 @@
                 </td>
                 <td>&euro; <input class="DeclarationPriceinput" name="declarationprice" type="text" /></td>
                 <td><input name="declarationcomment" type="text" /></td>
-                <td><input class="DeclarationDelete" name="declarationcomment" type="button" value="X" /></td>
+                <td><input class="DeclarationDelete" name="declarationcomment" type="button" value="X" onclick="removeTableRow('DeclarationTable', $(this).closest('tr').index());" /></td>
             </tr>
-			<!--<tr class="even"><td><input type="text"></td><td><select><option>one</option><option>two</option></select></td></tr>-->
 		</tbody>
 	</table>
     
