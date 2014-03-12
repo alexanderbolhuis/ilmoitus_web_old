@@ -1,7 +1,7 @@
 // Add a row to a table. Is a direct copy of the final row. Execute just before filling in forms in the final row. (onkeydown)
 function addTableRow(tableId) {
 	var table = $("#"+tableId);
-	$("#"+tableId+" tbody tr").last().clone().appendTo("table tbody").find('input').not(':button').val('');
+	$("#"+tableId+" tbody tr").last().clone().appendTo("#"+tableId+" tbody").find('input').not(':button').val('');
 	var lastRow = $("#"+tableId+" tbody tr").last();
 
 	if($("#"+tableId+" tbody tr").last().hasClass("even")) {
