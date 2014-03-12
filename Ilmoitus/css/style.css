@@ -9,10 +9,6 @@ div {
     position: relative;
 }
 
-table td, th {
-    padding: 5px;
-}
-
 textarea {
     resize: none;
 }
@@ -39,6 +35,11 @@ input[type="button"]:hover {
     border-color: #000066;
 }
 
+input[type="button"]:disabled {
+    background-color: grey;
+    border-color: grey;
+}
+
 input[type="button"].selected {
     background-color: #000066;
     border-color: #000066;
@@ -56,6 +57,15 @@ h4, h5, h6 {
 
 h1, h2, h3 {
     color: #000066;
+}
+
+/* Normal Table */
+table td, th {
+    padding: 5px;
+}
+
+table input, table select {
+    margin-top: 0px;
 }
 
 /* Styled Table */
@@ -82,8 +92,8 @@ table.styledTable tbody tr.even {
     background-color: #95B9E8;
 }
 
-table input, table select {
-    margin-top: 0px;
+table.styledTable tr.selected {
+    background-color: #cc0066 !important;
 }
 
 /* Outer wrap */

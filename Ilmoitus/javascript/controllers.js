@@ -30,8 +30,11 @@ ilmoitusApp.controller('templateController', function($scope, $state) {
 
 ilmoitusApp.controller('declarationsController', function($scope, $state) {
 	$scope.navBtnSelect("declarationsBtn");
+	SetTableSelectable("declarationTable");
+	
 	//Metod to open the declaration Details page
 	$scope.openDeclarationDetails = function(declarationId){
+		console.log("declaratie ID: " + getTableSelectedItem("declarationTable"));
 		$state.go('template.declarationDetails', {declarationId: declarationId});
 	}
 });

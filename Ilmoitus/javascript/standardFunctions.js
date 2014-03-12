@@ -27,6 +27,26 @@ function removeTableRow(tableId, rowIndex) {
 	}
 }
 
+//An array to support multiple selectable tables on a single page. Key is the table ID. 
+var currentlySelected = Array();
+function SetTableSelectable(tableId) {
+	//Makes it possible to select an item in the table.
+    $("#"+tableId+" tbody tr").click(function() {
+    	var table = $(this).parent().parent();
+        $(currentlySelected[table.attr("id")]).removeClass("selected");
+        currentlySelected[table.attr("id")] = this;
+        $(this).addClass("selected")
+    });
+}
+
+function getTableSelectedItem(tableId) {
+	if (typeof currentlySelected[tableId].id === 'undefined') {
+        return -1;
+    } else {
+        return currentlySelected[tableId].id;
+    }
+}
+
 /**
  * Show an error message with the given message and title.
  * 
