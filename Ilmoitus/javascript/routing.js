@@ -25,6 +25,16 @@ ilmoitusApp.config(function($stateProvider, $urlRouterProvider) {
 		templateUrl: "html/newDeclaration.html",
 		controller: "newDeclarationController"
 	})
+	.state('template.sendedDeclarations', {
+		url: "/sendedDeclarations",
+		templateUrl: "html/sendedDeclarations.html",
+		controller: "sendedDeclarationsController"
+	})
+	.state('template.declarationsHistory', {
+		url: "/declarationsHistory",
+		templateUrl: "html/declarationsHistory.html",
+		controller: "declarationsHistoryController"
+	})
 	.state('template.declarationDetails', {
 		url: "/declarationDetails/:declarationId",
 		templateUrl: "html/declarationDetails.html",

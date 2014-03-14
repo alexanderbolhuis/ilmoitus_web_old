@@ -43,6 +43,14 @@ ilmoitusApp.controller('newDeclarationController', function($scope) {
 	$scope.navBtnSelect("newDeclarationBtn");
 });
 
+ilmoitusApp.controller('sendedDeclarationsController', function($scope) {
+	$scope.navBtnSelect("sendedDeclarationsBtn");
+});
+
+ilmoitusApp.controller('declarationsHistoryController', function($scope) {
+	$scope.navBtnSelect("declarationsHistoryBtn");
+});
+
 ilmoitusApp.controller('declarationDetailsController', function($scope, $stateParams) {
 	// Get declaration ID from url parameter.
 	$scope.declarationId = $stateParams.declarationId;

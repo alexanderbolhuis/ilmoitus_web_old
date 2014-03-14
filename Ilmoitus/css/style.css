@@ -259,6 +259,16 @@ header {
     height: 150px;
 }
 
+.DeclarationsCommentsDiv {
+    float: left;
+    margin-right: 40px;
+}
+
+.DeclarationsCommentsDiv textarea {
+    width: 280px;
+    height: 150px;
+}
+
 .DeclarationEvidenceDiv {
     float: left;
     margin-right: 40px;
@@ -270,6 +280,20 @@ header {
 }
 
 .DeclarationEvidenceDiv input {
+    width: 172px;
+}
+
+.DeclarationsEvidenceDiv {
+    float: left;
+    margin-right: 40px;
+}
+
+.DeclarationsEvidenceDiv select {
+    width: 280px;
+    height: 120px;
+}
+
+.DeclarationsEvidenceDiv input {
     width: 172px;
 }
 
