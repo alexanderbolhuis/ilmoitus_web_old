@@ -2,26 +2,11 @@
 function addTableRow(tableId) {
 	var table = $("#"+tableId);
 	$("#"+tableId+" tbody tr").last().clone().appendTo("#"+tableId+" tbody").find('input').not(':button').val('');
-	var lastRow = $("#"+tableId+" tbody tr").last();
-
-	if($("#"+tableId+" tbody tr").last().hasClass("even")) {
-		$("#"+tableId+" tbody tr").last().removeClass("even");
-	} else {
-		$("#"+tableId+" tbody tr").last().addClass("even");
-	}
-	
 }
 
 function removeTableRow(tableId, rowIndex) {
 	if($("#"+tableId+" tbody tr").length > 1) {
 		$("#"+tableId+" tbody tr").eq(rowIndex).remove();
-		$("#"+tableId+" tbody tr").each(function( index, element ) {
-			if(index % 2) {
-				$(element).addClass("even");
-			} else {
-				$(element).removeClass("even");
-			}
-		});
 	} else {
 		//Clear row input fields
 	}
