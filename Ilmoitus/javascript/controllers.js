@@ -41,6 +41,7 @@ ilmoitusApp.controller('declarationsController', function($scope, $state) {
 
 ilmoitusApp.controller('newDeclarationController', function($scope) {
 	$scope.navBtnSelect("newDeclarationBtn");
+	$(".datepicker").datepicker();
 });
 
 ilmoitusApp.controller('sendedDeclarationsController', function($scope) {

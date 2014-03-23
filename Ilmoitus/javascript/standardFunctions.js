@@ -2,13 +2,17 @@
 function addTableRow(tableId) {
 	var table = $("#"+tableId);
 	$("#"+tableId+" tbody tr").last().clone().appendTo("#"+tableId+" tbody").find('input').not(':button').val('');
+    $(".datepicker").last().removeAttr("id");
+    $(".datepicker").last().removeClass("hasDatepicker");
+    $(".datepicker").datepicker();
 }
 
 function removeTableRow(tableId, rowIndex) {
 	if($("#"+tableId+" tbody tr").length > 1) {
 		$("#"+tableId+" tbody tr").eq(rowIndex).remove();
 	} else {
-		//Clear row input fields
+		//If only one row left, clear row input fields
+        $("#"+tableId+" tbody tr").find('input').not(':button').val('');
 	}
 }
 
@@ -67,3 +71,7 @@ function closeMessage() {
     }, 600);
     
 }
+
+$(function() {
+    $( ".datepicker" ).datepicker();
+});
