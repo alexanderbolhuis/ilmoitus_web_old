@@ -33,9 +33,8 @@ ilmoitusApp.controller('declarationsController', function($scope, $state) {
 	SetTableSelectable("declarationTable");
 	
 	//Metod to open the declaration Details page
-	$scope.openDeclarationDetails = function(declarationId){
-		console.log("declaratie ID: " + getTableSelectedItem("declarationTable"));
-		$state.go('template.declarationDetails', {declarationId: declarationId});
+	$scope.openDeclarationDetails = function(){
+		$state.go('template.declarationDetails', {declarationId: getTableSelectedItem("declarationTable")});
 	}
 });
 
@@ -59,9 +58,21 @@ ilmoitusApp.controller('declarationsHistoryController', function($scope) {
 ilmoitusApp.controller('declarationDetailsController', function($scope, $stateParams) {
 	// Get declaration ID from url parameter.
 	$scope.declarationId = $stateParams.declarationId;
-});
+	
+	var request = $.ajax({
+		type: "GET",
+		url: "http://127.0.0.1:8080/declaration/4",
+		//url: "http://127.0.0.1:8080/auth/login",
+	}).done(function( data ) {
+		alert( "Data retrieved: " + data );
+	});
 
-//Remove
-ilmoitusApp.controller('testPageController', function($scope) {
-	$scope.navBtnSelect("testPageBtn");
+	request.done(function( data ) {
+		alert( "Data retrieved: " + data );
+	});
+
+	request.fail(function( jqXHR, textStatus ) {
+		alert( "Request failed: " + textStatus );
+		console.log(jqXHR);
+	});
 });

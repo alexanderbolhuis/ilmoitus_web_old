@@ -45,10 +45,4 @@ ilmoitusApp.config(function($stateProvider, $urlRouterProvider) {
 		templateUrl: "html/declarationDetails.html",
 		controller: "declarationDetailsController"
 	})
-	//Remove
-	.state('template.testPage', {
-		url: "/testPage",
-		templateUrl: "html/testPage.html",
-		controller: "testPageController"
-	})
 });
