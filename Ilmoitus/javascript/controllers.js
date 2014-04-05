@@ -58,21 +58,46 @@ ilmoitusApp.controller('declarationsHistoryController', function($scope) {
 ilmoitusApp.controller('declarationDetailsController', function($scope, $stateParams) {
 	// Get declaration ID from url parameter.
 	$scope.declarationId = $stateParams.declarationId;
-	
+
+	//TODO: remove when correct id's are passed from previous page. 
+	$scope.declarationId = "4714705859903488";
+
+	//Get declaration details
 	var request = $.ajax({
 		type: "GET",
-		url: "http://127.0.0.1:8080/declaration/4",
-		//url: "http://127.0.0.1:8080/auth/login",
-	}).done(function( data ) {
-		alert( "Data retrieved: " + data );
+		url: "/declaration/"+$scope.declarationId,
+		error: function(jqXHR, textStatus, errorThrown){
+			console.error( "Request failed: \ntextStatus: " + textStatus + " \nerrorThrown: "+errorThrown );
+		}
 	});
 
-	request.done(function( data ) {
-		alert( "Data retrieved: " + data );
+	request.done(function(data){
+		$scope.comments = data.comment;
+		$scope.supervisor = "test";
+		$scope.$apply();
+
+		//Get supervisor name and id
+		var supervisorKey = data.assigned_to[data.assigned_to.length-1];
+		var request2 = $.ajax({
+			type: "GET",
+			url: "/persons/"+supervisorKey,
+			error: function(jqXHR, textStatus, errorThrown){
+				console.error( "Request failed: \ntextStatus: " + textStatus + " \nerrorThrown: "+errorThrown );
+			}
+		});
+
+		request2.done(function(data){
+			$scope.supervisorId = data.employee_number;
+			$scope.supervisor = data.first_name + " " + data.last_name;
+			$scope.$apply();
+		});
 	});
 
-	request.fail(function( jqXHR, textStatus ) {
-		alert( "Request failed: " + textStatus );
-		console.log(jqXHR);
-	});
+	$scope.totalPrice = "124,-"
+	$scope.itemList =	[
+							{"date": "asdf", "sort": "qwer", "subsort": "zcxv", "price": "20", "comment": "placeholder1"}, 
+							{"date": "fdsa", "sort":  "poiu", "subsort":  "/,m", "price": "30", "comment": "placeholder2"}, 
+							{"date": "123", "sort":  "456", "subsort": "789", "price": "40", "comment": "placeholder3"}
+						];
+
 });
