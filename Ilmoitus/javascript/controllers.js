@@ -35,9 +35,9 @@ ilmoitusApp.controller('declarationsController', function($scope, $state, $http)
 		//Data not fetched, use backup
 		//TODO: Delete this function and show some error
 		$scope.declarationList = [
-			{ 'id':'1', 'created_at':'06-03-2014', 'declaraionlines':[''], 'totalprice':'100,50', 'state':'Goedgekeurd', 'comment':'Komt op loonstrook voor: 31-4-2012' },
-			{ 'id':'2', 'created_at':'07-03-2014', 'declaraionlines':['', '', ''], 'totalprice':'50', 'state':'In behandeling', 'comment':'' },
-			{ 'id':'3', 'created_at':'08-03-2014', 'declaraionlines':['', ''], 'totalprice':'85,65', 'state':'Openstaand', 'comment':'' }
+			{ 'id':'1', 'created_at':'06-03-2014', 'declaraionlines':[''], 'totalprice':'100,50', 'state':'Goedgekeurd', 'info':'Komt op loonstrook voor: 31-4-2012' },
+			{ 'id':'2', 'created_at':'07-03-2014', 'declaraionlines':['', '', ''], 'totalprice':'50', 'state':'In behandeling', 'info':'' },
+			{ 'id':'3', 'created_at':'08-03-2014', 'declaraionlines':['', ''], 'totalprice':'85,65', 'state':'Openstaand', 'info':'' }
 		];
 	});
 		
