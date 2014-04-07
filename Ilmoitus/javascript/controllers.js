@@ -28,14 +28,38 @@ ilmoitusApp.controller('templateController', function($scope, $state) {
     }
 });
 
-ilmoitusApp.controller('declarationsController', function($scope, $state) {
+ilmoitusApp.controller('declarationsController', function($scope, $state, $http) {
 	$scope.navBtnSelect("declarationsBtn");
-	SetTableSelectable("declarationTable");
-	
-	//Metod to open the declaration Details page
-	$scope.openDeclarationDetails = function(){
-		$state.go('template.declarationDetails', {declarationId: getTableSelectedItem("declarationTable")});
+	$http.get('/declarations/employee').then(function(res){
+		$scope.declarationList = res.data;
+		for(var i = 0 ; i < $scope.declarationList.length ; i++){
+			$scope.declarationList[i].totalprice = 90;
+			$scope.declarationList[i].itemCount = 3;
+		}
+	}, function(err) { 
+		console.error(err);
+	});
+		
+	//Select declaration
+	$scope.selectDeclaration = function(declaration){
+		$scope.currentdeclaration = declaration;
 	}
+	
+	//Doubleclick declaration
+	$scope.openDeclarationDetails = function(declarationid){
+ 		$state.go('template.declarationDetails', {declarationId: declarationid});
+  	}
+	
+	//Open declaration button
+	$scope.openDeclarationDetailsBtn = function(declarationid){
+ 		$state.go('template.declarationDetails', {declarationId: $scope.currentdeclaration.id});
+  	}
+	
+	//Delete declaration button
+	$scope.deleteDeclarationDetailsBtn = function(declarationid){
+ 		//TODO: bind DELETE handler
+		alert('Consider declaration "'+$scope.currentdeclaration.id+'" deleted.');
+  	}
 });
 
 ilmoitusApp.controller('newDeclarationController', function($scope) {
@@ -44,15 +68,16 @@ ilmoitusApp.controller('newDeclarationController', function($scope) {
 });
 
 ilmoitusApp.controller('declarationsSubmittedController', function($scope) {
-	$scope.navBtnSelect("");
+	$scope.navBtnSelect("sendedDeclarationsBtn");
 });
 
-ilmoitusApp.controller('sendedDeclarationsController', function($scope) {
-	$scope.navBtnSelect("sendedDeclarationsBtn");
+ilmoitusApp.controller('sentDeclarationDetailsController', function($scope) {
+	$scope.navBtnSelect("sentDeclarationDetailsBtn");
 });
 
 ilmoitusApp.controller('declarationsHistoryController', function($scope) {
 	$scope.navBtnSelect("declarationsHistoryBtn");
+	SetTableSelectable("declarationTable");
 });
 
 ilmoitusApp.controller('declarationDetailsController', function($scope, $stateParams) {
@@ -60,7 +85,7 @@ ilmoitusApp.controller('declarationDetailsController', function($scope, $statePa
 	$scope.declarationId = $stateParams.declarationId;
 
 	//TODO: remove when correct id's are passed from previous page. 
-	$scope.declarationId = "4714705859903488";
+	//$scope.declarationId = "4714705859903488";
 
 	//Get declaration details
 	var request = $.ajax({
@@ -92,7 +117,7 @@ ilmoitusApp.controller('declarationDetailsController', function($scope, $statePa
 		});
 	});
 
-	$scope.totalPrice = "124,-"
+	$scope.totalPrice = "90,-"
 	$scope.itemList =	[
 							{"date": "asdf", "sort": "qwer", "subsort": "zcxv", "price": "20", "comment": "placeholder1"}, 
 							{"date": "fdsa", "sort":  "poiu", "subsort":  "/,m", "price": "30", "comment": "placeholder2"}, 
