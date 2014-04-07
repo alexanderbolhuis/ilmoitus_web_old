@@ -73,7 +73,6 @@ ilmoitusApp.controller('declarationDetailsController', function($scope, $statePa
 
 	request.done(function(data){
 		$scope.comments = data.comment;
-		$scope.supervisor = "test";
 		$scope.$apply();
 
 		//Get supervisor name and id
