@@ -29,16 +29,15 @@ ilmoitusApp.controller('templateController', function($scope, $state) {
 });
 
 ilmoitusApp.controller('declarationsController', function($scope, $state, $http) {
+	$scope.navBtnSelect("declarationsBtn");
 	$http.get('/declarations/employee').then(function(res){
 		$scope.declarationList = res.data;
+		for(var i = 0 ; i < $scope.declarationList.length ; i++){
+			$scope.declarationList[i].totalprice = 90;
+			$scope.declarationList[i].itemCount = 3;
+		}
 	}, function(err) { 
-		//Data not fetched, use backup
-		//TODO: Delete this function and show some error
-		$scope.declarationList = [
-			{ 'id':'1', 'created_at':'06-03-2014', 'declaraionlines':[''], 'totalprice':'100,50', 'state':'Goedgekeurd', 'info':'Komt op loonstrook voor: 31-4-2012' },
-			{ 'id':'2', 'created_at':'07-03-2014', 'declaraionlines':['', '', ''], 'totalprice':'50', 'state':'In behandeling', 'info':'' },
-			{ 'id':'3', 'created_at':'08-03-2014', 'declaraionlines':['', ''], 'totalprice':'85,65', 'state':'Openstaand', 'info':'' }
-		];
+		console.error(err);
 	});
 		
 	//Select declaration
@@ -69,23 +68,58 @@ ilmoitusApp.controller('newDeclarationController', function($scope) {
 });
 
 ilmoitusApp.controller('declarationsSubmittedController', function($scope) {
-	$scope.navBtnSelect("");
+	$scope.navBtnSelect("sendedDeclarationsBtn");
 });
 
-ilmoitusApp.controller('sendedDeclarationsController', function($scope) {
-	$scope.navBtnSelect("sendedDeclarationsBtn");
+ilmoitusApp.controller('sentDeclarationDetailsController', function($scope) {
+	$scope.navBtnSelect("sentDeclarationDetailsBtn");
 });
 
 ilmoitusApp.controller('declarationsHistoryController', function($scope) {
 	$scope.navBtnSelect("declarationsHistoryBtn");
+	
+	//TODO: use Angular like in declarations.html
+	SetTableSelectable("declarationTable");
 });
 
 ilmoitusApp.controller('declarationDetailsController', function($scope, $stateParams) {
 	// Get declaration ID from url parameter.
 	$scope.declarationId = $stateParams.declarationId;
-});
 
-//Remove
-ilmoitusApp.controller('testPageController', function($scope) {
-	$scope.navBtnSelect("testPageBtn");
+	//Get declaration details
+	var request = $.ajax({
+		type: "GET",
+		url: "/declaration/"+$scope.declarationId,
+		error: function(jqXHR, textStatus, errorThrown){
+			console.error( "Request failed: \ntextStatus: " + textStatus + " \nerrorThrown: "+errorThrown );
+		}
+	});
+
+	request.done(function(data){
+		$scope.comments = data.comment;
+		$scope.$apply();
+
+		//Get supervisor name and id
+		var supervisorKey = data.assigned_to[data.assigned_to.length-1];
+		var request2 = $.ajax({
+			type: "GET",
+			url: "/persons/"+supervisorKey,
+			error: function(jqXHR, textStatus, errorThrown){
+				console.error( "Request failed: \ntextStatus: " + textStatus + " \nerrorThrown: "+errorThrown );
+			}
+		});
+
+		request2.done(function(data){
+			$scope.supervisorId = data.employee_number;
+			$scope.supervisor = data.first_name + " " + data.last_name;
+			$scope.$apply();
+		});
+	});
+
+	$scope.totalPrice = "90,-"
+	$scope.itemList =	[
+							{"date": "asdf", "sort": "qwer", "subsort": "zcxv", "price": "20", "comment": "placeholder1"}, 
+							{"date": "fdsa", "sort":  "poiu", "subsort":  "/,m", "price": "30", "comment": "placeholder2"}, 
+							{"date": "123", "sort":  "456", "subsort": "789", "price": "40", "comment": "placeholder3"}
+						];
 });

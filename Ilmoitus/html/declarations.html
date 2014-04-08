@@ -2,7 +2,7 @@
 	<div class="DeclarationFloatContainer">
 		<h2 style="float:left;">Mijn declaraties:</h2>
 		<div style="float:right;">
-			<input type="button" value="Declaratie annuleren" ng-disabled="currentdeclaration.state != 'Openstaand';" ng-click="deleteDeclarationDetailsBtn();" />
+			<input type="button" value="Declaratie annuleren" ng-disabled="currentdeclaration.state != 'Open';" ng-click="deleteDeclarationDetailsBtn();" />
 			<input type="button" value="Declaratie tonen" ng-disabled="!currentdeclaration;" ng-click="openDeclarationDetailsBtn();" />
 		</div>
 	</div>
@@ -19,8 +19,8 @@
 			<tr ng-repeat="declaration in declarationList" ng-dblclick="openDeclarationDetails(declaration.id);" id="{{ declaration.id }}" 
                 ng-class="{selected:currentdeclaration.id==declaration.id}" ng-click="selectDeclaration(declaration);">
                 
-				<td>{{ declaration.created_at }}</td>
-				<td>{{ declaration.declaraionlines.length }}</td>
+				<td>{{ declaration.created_at.split(' ')[0] }}</td>
+				<td>{{ declaration.itemCount }}</td>
 				<td>&euro; {{ declaration.totalprice }}</td>
 				<td>{{ declaration.state }}</td>
 				<td>{{ declaration.info }}</td>
