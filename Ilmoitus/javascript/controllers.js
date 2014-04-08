@@ -77,6 +77,8 @@ ilmoitusApp.controller('sentDeclarationDetailsController', function($scope) {
 
 ilmoitusApp.controller('declarationsHistoryController', function($scope) {
 	$scope.navBtnSelect("declarationsHistoryBtn");
+	
+	//TODO: use Angular like in declarations.html
 	SetTableSelectable("declarationTable");
 });
 
