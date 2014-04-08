@@ -84,9 +84,6 @@ ilmoitusApp.controller('declarationDetailsController', function($scope, $statePa
 	// Get declaration ID from url parameter.
 	$scope.declarationId = $stateParams.declarationId;
 
-	//TODO: remove when correct id's are passed from previous page. 
-	//$scope.declarationId = "4714705859903488";
-
 	//Get declaration details
 	var request = $.ajax({
 		type: "GET",
@@ -123,5 +120,4 @@ ilmoitusApp.controller('declarationDetailsController', function($scope, $statePa
 							{"date": "fdsa", "sort":  "poiu", "subsort":  "/,m", "price": "30", "comment": "placeholder2"}, 
 							{"date": "123", "sort":  "456", "subsort": "789", "price": "40", "comment": "placeholder3"}
 						];
-
 });
